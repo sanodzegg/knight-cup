@@ -1,0 +1,136 @@
+.landingWrapper, .personalInfoWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #FD5334;
+}
+
+.landingWrapper .landingWrapperCol, .landingWrapper .personalWrapperCol, .personalInfoWrapper .landingWrapperCol, .personalInfoWrapper .personalWrapperCol {
+  width: 50%;
+}
+
+.landingWrapper .landingWrapperCol.scrollable, .landingWrapper .personalWrapperCol.scrollable, .personalInfoWrapper .landingWrapperCol.scrollable, .personalInfoWrapper .personalWrapperCol.scrollable {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper, .landingWrapper .landingWrapperCol.scrollable .personalIMGWrapper, .landingWrapper .personalWrapperCol.scrollable .landingIMGWrapper, .landingWrapper .personalWrapperCol.scrollable .personalIMGWrapper, .personalInfoWrapper .landingWrapperCol.scrollable .landingIMGWrapper, .personalInfoWrapper .landingWrapperCol.scrollable .personalIMGWrapper, .personalInfoWrapper .personalWrapperCol.scrollable .landingIMGWrapper, .personalInfoWrapper .personalWrapperCol.scrollable .personalIMGWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper img, .landingWrapper .landingWrapperCol.scrollable .personalIMGWrapper img, .landingWrapper .personalWrapperCol.scrollable .landingIMGWrapper img, .landingWrapper .personalWrapperCol.scrollable .personalIMGWrapper img, .personalInfoWrapper .landingWrapperCol.scrollable .landingIMGWrapper img, .personalInfoWrapper .landingWrapperCol.scrollable .personalIMGWrapper img, .personalInfoWrapper .personalWrapperCol.scrollable .landingIMGWrapper img, .personalInfoWrapper .personalWrapperCol.scrollable .personalIMGWrapper img {
+  width: 105%;
+  height: 105%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper {
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  width: 665px;
+  margin-left: 85px;
+  margin-top: 265px;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper h1, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper h1, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper h1, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper h1 {
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 110px;
+  color: #FFFFFF;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper span, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper span, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper span, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper span {
+  color: #212529;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper button, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper button, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper button, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper button {
+  margin-top: 100px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #212529;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+  padding: 13px 24px;
+  outline: unset;
+  border: unset;
+  border-radius: 8px;
+  padding-right: 50px;
+  background: url("@/assets/icons/btnVector.svg") no-repeat right center, #212529;
+  background-position-x: 90%;
+  border: 4px solid #FD5334;
+}
+
+.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper button:hover, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper button:hover, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper button:hover, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper button:hover {
+  border: 4px solid #C2A5F9CC;
+}
+
+.landingWrapper .landingWrapperCol ::-webkit-scrollbar, .landingWrapper .personalWrapperCol ::-webkit-scrollbar, .personalInfoWrapper .landingWrapperCol ::-webkit-scrollbar, .personalInfoWrapper .personalWrapperCol ::-webkit-scrollbar {
+  display: none;
+}
+
+.landingWrapper .personalWrapperCol .personalIMGWrapper, .personalInfoWrapper .personalWrapperCol .personalIMGWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.landingWrapper .personalWrapperCol .personalIMGWrapper img, .personalInfoWrapper .personalWrapperCol .personalIMGWrapper img {
+  width: 105%;
+  height: 105%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.landingWrapper .personalWrapperCol .pictureText, .personalInfoWrapper .personalWrapperCol .pictureText {
+  width: 425px;
+  position: absolute;
+  top: 43%;
+  left: 18.5%;
+  font-family: 'Nunito', sans-serif;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+
+.landingWrapper .personalWrapperCol .pictureText .quote, .personalInfoWrapper .personalWrapperCol .pictureText .quote {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+.landingWrapper .personalWrapperCol .pictureText .author, .personalInfoWrapper .personalWrapperCol .pictureText .author {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 32px;
+  color: #E5E6E8;
+}
+
+.personalInfoWrapper {
+  background-color: #FFFFFF;
+}
+/*# sourceMappingURL=Wrappers.css.map */
