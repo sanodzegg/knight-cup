@@ -133,4 +133,38 @@
 .personalInfoWrapper {
   background-color: #FFFFFF;
 }
+
+.personalInfoWrapper .personalWrapperCol.form .personalWrapperContent {
+  padding-left: 50px;
+  padding-right: 175px;
+}
+
+.personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper {
+  font-weight: 600;
+  margin-top: 110px;
+}
+
+.personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper h2 {
+  font-size: 32px;
+  line-height: 48px;
+  color: #000;
+}
+
+.personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper p {
+  font-size: 14px;
+  line-height: 21px;
+  color: #95939A;
+}
+
+.personalInfoWrapper .personalWrapperCol.form .personalWrapperForm {
+  margin-top: 45px;
+}
+
+.personalInfoWrapper .personalWrapperCol .navigationWrapper {
+  padding-top: 60px;
+}
 /*# sourceMappingURL=Wrappers.css.map */

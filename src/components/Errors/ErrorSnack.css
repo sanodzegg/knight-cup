@@ -1,0 +1,52 @@
+.errorParent {
+  width: 350px;
+  padding: 10px 12px;
+  border: 1px #0000001A solid;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 8px 16px #00000026;
+          box-shadow: 0 8px 16px #00000026;
+}
+
+.errorParent * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.errorParent .errorHeaderWrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.errorParent .errorHeaderWrapper .errorHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.errorParent .errorHeaderWrapper .errorHeader .errTitle {
+  color: #DC3545;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  margin-left: 8px;
+}
+
+.errorParent .errorHeaderWrapper .closeIcon {
+  float: right;
+  cursor: pointer;
+}
+
+.errorParent .errDesc {
+  margin-top: 20px;
+}
+/*# sourceMappingURL=ErrorSnack.css.map */

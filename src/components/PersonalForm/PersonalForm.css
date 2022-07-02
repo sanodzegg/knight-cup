@@ -1,0 +1,165 @@
+input {
+  display: block;
+  margin-top: 40px;
+  border: unset;
+  outline: unset;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  width: 100%;
+  padding: 8px 16px;
+  border-bottom: 1px solid #21252932;
+}
+
+input.active {
+  border: unset;
+  outline: unset;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  width: 100%;
+  padding: 8px 16px;
+  border-bottom: 1px solid #21252932;
+  background-color: #E9ECEF;
+}
+
+input.error {
+  border: unset;
+  outline: unset;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  width: 100%;
+  padding: 8px 16px;
+  border-bottom: 1px solid #21252932;
+  color: #DC3545;
+  background-color: #FFEFEF;
+}
+
+input.valid {
+  border: unset;
+  outline: unset;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  width: 100%;
+  padding: 8px 16px;
+  border-bottom: 1px solid #21252932;
+  background-color: transparent;
+  background: url(@/assets/icons/validVector.svg) no-repeat right center;
+  background-position-x: 98.5%;
+}
+
+input:hover::-webkit-input-placeholder {
+  color: #21252980;
+}
+
+input:hover:-ms-input-placeholder {
+  color: #21252980;
+}
+
+input:hover::-ms-input-placeholder {
+  color: #21252980;
+}
+
+input:hover::placeholder {
+  color: #21252980;
+}
+
+::-webkit-input-placeholder {
+  color: #212529;
+}
+
+:-ms-input-placeholder {
+  color: #212529;
+}
+
+::-ms-input-placeholder {
+  color: #212529;
+}
+
+::placeholder {
+  color: #212529;
+}
+
+.navButtonWrapper {
+  width: 100%;
+  margin-top: 85px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navButtonWrapper .nextBtn {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #212529;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+  padding: 13px 24px;
+  outline: unset;
+  border: unset;
+  border-radius: 8px;
+  padding-right: 60px;
+  background: url(http://localhost:8080/img/btnVector.3a5b8adc.svg) no-repeat right center, #212529;
+  background-position-x: 80%;
+}
+
+.navButtonWrapper .backBtn {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #212529;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+  padding: 13px 24px;
+  outline: unset;
+  border: unset;
+  border-radius: 8px;
+  color: #212529;
+  background-color: transparent;
+  border: 1px solid #212529;
+}
+
+.navButtonWrapper .backBtn:hover {
+  background-color: #B9B4C34D;
+  border: 1px solid #C2A5F9CC;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.errorsParent {
+  position: absolute;
+  top: 23%;
+  right: 5%;
+  z-index: 10;
+}
+
+.errorsParent .errorsWrapper {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=PersonalForm.css.map */

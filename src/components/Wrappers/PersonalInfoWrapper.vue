@@ -1,10 +1,20 @@
 <script>
     import HeaderSnack from "@/components/HeaderSnack/HeaderSnack.vue"
-    import NavigationBar from '@/components/HeaderSnack/NavigationBar.vue';
+    import LocationBar from '@/components/HeaderSnack/LocationBar.vue';
+import NavigationBar from "../HeaderSnack/NavigationBar.vue";
+import PresonalForm from "../PersonalForm/PresonalForm.vue";
     export default {
         components: {
-            HeaderSnack,
-            NavigationBar
+    HeaderSnack,
+    LocationBar,
+    NavigationBar,
+    PresonalForm
+},
+        data() {
+            return {
+                current: 1,
+                active: 0
+            }
         }
     }
 </script>
@@ -22,8 +32,18 @@
                 </div>
             </div>
         </div>
-        <div class="personalWrapperCol">
-            <NavigationBar step="Start creating your account" />
+        <div class="personalWrapperCol form">
+            <LocationBar step="Start creating your account" />
+            <div class="personalWrapperContent">
+                <NavigationBar :current="current" :active="active" />
+                <div class="personalInfoTextWrapper">
+                    <h2>Personal information</h2>
+                    <p>This is basic informaton fields</p>
+                </div>
+                <div class="personalWrapperForm">
+                    <PresonalForm @setActive="(n) => active = n" :active="active"/>
+                </div>
+            </div>
         </div>
     </div>
 </template>

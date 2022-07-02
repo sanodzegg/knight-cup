@@ -1,17 +1,38 @@
 <script>
     export default {
         props: {
-            step: String
+            current: Number,
+            active: Number
         }
     }
 </script>
 
 <template>
     <div class="navigationWrapper">
-        <p>{{ step }}</p>
+        <div class="wizardWrapper">
+            <div v-if="current === 1 && active === 0" class="pageWrapper current">
+                <span>1</span>
+            </div>
+            <div v-else-if="current === 1 && active === 1" class="pageWrapper current active">
+                <span>1</span>
+            </div>
+            <div v-else class="pageWrapper">
+                <span>1</span>
+            </div>
+            <p>Personal Information</p>
+        </div>
+        <hr class="wizardHR">
+        <div class="wizardWrapper">
+            <div v-if="current === 2 && active === 0" class="pageWrapper current">
+                <span>2</span>
+            </div>
+            <div v-else-if="current === 2 && active === 2" class="pageWrapper current active">
+                <span>2</span>
+            </div>
+            <div v-else class="pageWrapper">
+                <span>2</span>
+            </div>
+            <p>Chess experience</p>
+        </div>
     </div>
 </template>
-
-<style>
-    @import url(./HeaderSnack.css);
-</style>

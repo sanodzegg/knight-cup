@@ -1,0 +1,54 @@
+@import '../../assets/style/variables'
+@import '../../assets/style/mixins'
+input
+    display: block
+    margin-top: 40px
+    @include default-input
+
+    &.active
+        @include input-active
+    &.error
+        @include input-error
+    &.valid
+        @include input-valid
+
+input:hover::placeholder
+    color: #21252980
+
+::placeholder
+    color: $main
+
+.navButtonWrapper
+    width: 100%
+    margin-top: 85px
+    display: flex
+    justify-content: space-between
+
+    .nextBtn
+        @include default-btn
+        padding-right: 60px
+        background: url(http://localhost:8080/img/btnVector.3a5b8adc.svg) no-repeat right center, #212529;
+        background-position-x: 80%
+    .backBtn
+        @include default-mini-btn
+    .backBtn:hover
+        @include default-mini-btn-hover
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+input[type=number]
+    -moz-appearance: textfield
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator
+    display: none
+    -webkit-appearance: none
+
+.errorsParent
+    position: absolute
+    top: 23%
+    right: 5%
+    z-index: 10
+    .errorsWrapper
+        margin-top: 10px
