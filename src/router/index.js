@@ -1,18 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LandingView from '@/views/LandingView';
 import PersonalInfoView from '@/views/PersonalInfoView';
+import ChessInfoView from '@/views/ChessInfoView';
+import CompleteView from '@/views/CompleteView';
 
 const routes = [
   {
     path: '/',
-    name: 'landing',
+    name: 'landingTab',
     component: LandingView
   },
   {
-    path: '/test',
-    name: 'personalInfo',
+    path: '/personalForm',
+    name: 'personalInfoTab',
     component: PersonalInfoView
-  }
+  },
+  {
+    path: '/chessForm',
+    name: 'chessInfoTab',
+    component: ChessInfoView
+  },
+  {
+    path: '/complete',
+    name: 'CompleteTab',
+    component: CompleteView
+  },
 ]
 
 const router = createRouter({

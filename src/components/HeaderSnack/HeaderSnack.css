@@ -86,6 +86,14 @@
   border: none;
 }
 
+.navigationWrapper .wizardWrapper .pageWrapper.done {
+  background: url("../../assets/icons/navigationSnackDone.svg") no-repeat center, #E9FAF1;
+}
+
+.navigationWrapper .wizardWrapper .pageWrapper.done span {
+  color: transparent !important;
+}
+
 .navigationWrapper .wizardWrapper .pageWrapper span {
   font-size: 18px;
   font-weight: 700;

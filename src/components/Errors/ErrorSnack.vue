@@ -6,21 +6,29 @@
         },
         methods: {
             handleClose(e) {
-                e.composedPath()[3].remove();
+                e.target.parentNode.remove();
+            },
+            hideParent() {
+                setTimeout(() => {
+                    if(this.$refs.errParent !== null) {
+                        this.$refs.errParent.classList.add("hide");
+                    }
+                }, 1500);
             }
+        },
+        mounted:function() {
+           this.hideParent();
         }
     }
 </script>
 
 <template>
-    <div class="errorParent">
-        <div class="errorHeaderWrapper">
-            <div class="errorHeader">
-                <img :src="require('@/assets/icons/errDivIcon.svg')">
-                <p class="errTitle">{{ title }}</p>
-            </div>
-            <img @click="handleClose($event)" class="closeIcon" :src="require('@/assets/icons/quitIcon.svg')">
+    <div class="errorParent" ref="errParent">
+        <div class="errorHeader">
+            <img :src="require('@/assets/icons/errDivIcon.svg')">
+            <p class="errTitle">{{ title }}</p>
         </div>
+        <img @click="handleClose($event)" class="closeIcon" :src="require('@/assets/icons/quitIcon.svg')">
         <p class="errDesc">{{ description }}</p>
     </div>
 </template>

@@ -19,7 +19,7 @@
         <div class="landingWrapperCol">
             <div class="landingTextWrapper">
                 <h1>chess says <span>a lot about</span> who we are</h1>
-                <router-link to="test"><button class="landingButton">Get Started</button></router-link>
+                <router-link to="/personalForm"><button class="landingButton">Get Started</button></router-link>
             </div>
         </div>
     </div>

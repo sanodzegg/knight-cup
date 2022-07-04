@@ -40,15 +40,14 @@ input::-webkit-inner-spin-button
 
 input[type=number]
     -moz-appearance: textfield
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator
-    display: none
-    -webkit-appearance: none
 
-.errorsParent
+.errorsWrapper
     position: absolute
     top: 23%
     right: 5%
     z-index: 10
-    .errorsWrapper
-        margin-top: 10px
+    margin-top: 10px
+
+.valid::-webkit-calendar-picker-indicator
+    display: none
+    -webkit-appearance: none

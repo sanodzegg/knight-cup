@@ -1,17 +1,17 @@
 @import '../../assets/style/variables'
 @import '../../assets/style/mixins'
 
-.landingWrapper, .personalInfoWrapper
+.landingWrapper, .personalInfoWrapper, .chessInfoWrapper
     display: flex
     justify-content: center
     align-items: flex-start
     background-color: $landingBackground
-    .landingWrapperCol, .personalWrapperCol
+    .landingWrapperCol, .personalWrapperCol, .chessWrapperCol
         width: 50%
         &.scrollable
             height: 100vh
             overflow-y: scroll
-            .landingIMGWrapper, .personalIMGWrapper
+            .landingIMGWrapper
                 display: flex
                 overflow: hidden
                 width: 100%
@@ -104,3 +104,61 @@
                 margin-top: 45px
         .navigationWrapper
             padding-top: 60px
+
+.chessInfoWrapper
+    background-color: $default
+
+    .chessWrapperCol
+        &.form
+            .chessWrapperContent
+                padding-left: 50px
+                padding-right: 110px
+            .chessInfoTextWrapper
+                font-weight: 600
+                margin-top: 110px
+                *
+                    font-family: 'Open Sans', sans-serif
+                h2
+                    font-size: 32px
+                    line-height: 48px
+                    color: #000
+                p
+                    font-size: 14px
+                    line-height: 21px
+                    color: #95939A
+            .chessWrapperForm
+                margin-top: 45px
+        .navigationWrapper
+            padding-top: 60px
+        .chessIMGWrapper
+            display: flex
+            overflow: hidden
+            width: 100%
+            img
+                width: 105%
+                height: 105%
+                object-fit: fill
+
+    .chessIMGWrapper
+        .pictureText
+            width: 615px
+            position: absolute
+            top: 36.5%
+            left: 22.5%
+            font-family: 'Nunito', sans-serif
+            transform: translate(-50%, -50%)
+            text-transform: uppercase
+            .quote
+                font-weight: 800
+                font-style: italic
+                font-size: 26px
+                line-height: 50px
+                margin-bottom: 20px
+                color: $main
+            .author
+                font-weight: 500
+                font-style: italic
+                font-size: 24px
+                line-height: 32px
+                color: #093F68
+                text-align: end

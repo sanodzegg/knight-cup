@@ -9,7 +9,7 @@
 
 <template>
     <div class="navigationWrapper">
-        <div class="wizardWrapper">
+        <!-- <div class="wizardWrapper">
             <div v-if="current === 1 && active === 0" class="pageWrapper current">
                 <span>1</span>
             </div>
@@ -20,16 +20,20 @@
                 <span>1</span>
             </div>
             <p>Personal Information</p>
+        </div> -->
+        <div class="wizardWrapper">
+            <div :class="current === 1 && active === 0 ? 'pageWrapper current' 
+            : current === 1 && active === 1 ? 'pageWrapper current active' : current === 2 ? 'pageWrapper current active done'
+            : 'pageWrapper'">
+                <span>1</span>
+            </div>
+            <p>Personal Information</p>
         </div>
         <hr class="wizardHR">
         <div class="wizardWrapper">
-            <div v-if="current === 2 && active === 0" class="pageWrapper current">
-                <span>2</span>
-            </div>
-            <div v-else-if="current === 2 && active === 2" class="pageWrapper current active">
-                <span>2</span>
-            </div>
-            <div v-else class="pageWrapper">
+            <div :class="current === 2 && active === 0 ? 'pageWrapper current' 
+            : current === 2 && active === 2 ? 'pageWrapper current active' 
+            : 'pageWrapper'">
                 <span>2</span>
             </div>
             <p>Chess experience</p>

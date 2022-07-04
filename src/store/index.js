@@ -13,15 +13,19 @@ export default createStore({
         character_id: Number
     },
     },
-    mutations: {
-
-    },
     actions: {
         getData(context, object) {
+            Object.keys(object).forEach(e => {
+                this.state.userData[e] = object[e];
+            });
+        },
+        sendData(context, object) {
             console.log(object);
         }
     },
     getters: {
-
-    },
+        displayData(state) {
+            return state.userData;
+        }
+    }
 });
