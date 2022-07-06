@@ -1,7 +1,5 @@
 <script>
-    import { mapActions } from "vuex";
     import ErrorSnack from "../Errors/ErrorSnack.vue";
-
     export default {
     props: {
         active: Number,
@@ -47,10 +45,6 @@
         };
     },
     methods: {
-        ...mapActions(["getData"]),
-        handleClick() {
-            this.$emit("setActive", 1);
-        },
         handleBlur(e) {
             if (e.target.value.length > 0) {
                 e.target.classList.add("active");
@@ -120,6 +114,7 @@
                     this.errors.date_of_birth.valid = true;
                     const parsedDate = [date[1], date[2], date[0]];
                     this.personalData.date_of_birth = parsedDate.join("/");
+
                     e.classList.add("valid");
                     e.classList.remove("error");
                 }
@@ -135,12 +130,14 @@
 
             ref.classList.remove("valid");
         },
-        validate() {
+        validateWrapper() {
             this.validateName(this.$refs.textInput);
             this.validateMail(this.$refs.emailInput);
             this.validatePN(this.$refs.pnInput);
             this.validateDate(this.$refs.birthInput);
-
+        },
+        validate() {
+            this.validateWrapper();
             this.errData = [];
             Object.values(this.errors).forEach((e) => {
                 if (e.valid === false) {
@@ -148,7 +145,6 @@
                 }
             });
             if(this.errData.length === 0) {
-                this.getData(this.personalData);
                 this.$router.push("/chessForm");
             }
         },
@@ -167,10 +163,10 @@
         <ErrorSnack v-for="i in errData" :key="i" :title=i.title :description=i.description />
     </div>
     <form>
-        <input @click="handleClick" @blur="handleBlur($event); validateName(this.$refs.textInput)" ref="textInput" type="text" name="name" id="userName" placeholder="Name *" :value="storageData.name ? storageData.name : ''">
-        <input @click="handleClick" @blur="handleBlur($event); validateMail(this.$refs.emailInput)" ref="emailInput" type="email" name="email" id="userAddress" placeholder="Email address *" :value="storageData.email ? storageData.email : ''">
-        <input @click="handleClick" @blur="handleBlur($event); validatePN(this.$refs.pnInput)" ref="pnInput" name="number" id="userPN" placeholder="Phone number *" :value="storageData.phone ? storageData.phone : ''">
-        <input @click="handleClick; transform()" @blur="handleBlur($event); validateDate(this.$refs.birthInput)" ref="birthInput" type="text" name="date" id="userDate" placeholder="Date of birth *" :value="storageData.date_of_birth ? storageData.date_of_birth : ''">
+        <input @click="$emit('setActive', 1)" @blur="handleBlur($event); validateName(this.$refs.textInput)" ref="textInput" type="text" name="name" id="userName" placeholder="Name *" :value="storageData.name ? storageData.name : ''">
+        <input @click="$emit('setActive', 1)" @blur="handleBlur($event); validateMail(this.$refs.emailInput)" ref="emailInput" type="email" name="email" id="userAddress" placeholder="Email address *" :value="storageData.email ? storageData.email : ''">
+        <input @click="$emit('setActive', 1)" @blur="handleBlur($event); validatePN(this.$refs.pnInput)" ref="pnInput" name="number" id="userPN" placeholder="Phone number *" :value="storageData.phone ? storageData.phone : ''">
+        <input @click="$emit('setActive', 1); transform()" @blur="handleBlur($event); validateDate(this.$refs.birthInput)" ref="birthInput" type="text" name="date" id="userDate" placeholder="Date of birth *" :value="storageData.date_of_birth ? storageData.date_of_birth : ''">
     </form>
     <div class="navButtonWrapper">
         <button class="backBtn" @click="$router.go(-1)">Back</button>

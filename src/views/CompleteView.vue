@@ -1,19 +1,26 @@
 <script>
-    import { mapActions, mapGetters } from 'vuex';
     export default {
+        data() {
+            return {
+                personalData: Object,
+                chessData: Object,
+                finalData: Object,
+            }
+        },
         mounted: function() {
+            this.personalData = JSON.parse(sessionStorage.getItem("KC-personalInfo"));
+            this.chessData = JSON.parse(sessionStorage.getItem("KC-chessInfo"));
             sessionStorage.clear();
 
-            this.sendData(this.displayData);
+            this.finalData = {
+                ...this.personalData,
+                ...this.chessData
+            }
+
+            console.log(this.finalData);
         },
-        computed: {
-            ...mapGetters(["displayData"])
-        },
-        methods: {
-            ...mapActions(["sendData"])
-        }
     }
 </script>
 <template>
-    {{ displayData }}
+    <p></p>
 </template>

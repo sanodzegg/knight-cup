@@ -3,7 +3,7 @@
     export default {
         components: {
             HeaderSnack
-        }
+        },
     }
 </script>
 <template>
