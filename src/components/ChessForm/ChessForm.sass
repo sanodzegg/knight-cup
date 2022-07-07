@@ -3,6 +3,10 @@
     display: grid
     grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr
     gap: 25px
+    @media screen and (max-width: 845px)
+        display: flex
+        flex-direction: column
+        gap: 25px
     *
         font-family: 'Open Sans', sans-serif
     .selectParent
@@ -48,6 +52,7 @@
             box-shadow: 0 2px 4px 0 #0000001A
             position: absolute
             margin-top: 5px
+            z-index: 10
             p
                 cursor: pointer
                 padding: 8px 285px 8px 20px
@@ -66,10 +71,16 @@
             font-size: 16px
             line-height: 24px
         .gmWrapper
+            overflow-y: scroll
+            max-height: 420px
+
             padding: 16px 20px 35px 28px
             margin: 0
             margin-top: 5px
             background-color: $default
+
+            @media screen and (max-width: 845px)
+                padding: 16px 10px 35px 10px
             .gmParent
                 margin-top: 15px
                 cursor: pointer
@@ -78,6 +89,8 @@
                     justify-content: space-between
                     align-items: center
                     width: 390px
+                    @media screen and (max-width: 845px)
+                        width: 325px
                     p
                         padding: 0
                         white-space: nowrap
@@ -96,8 +109,18 @@
             .gmParent:hover
                 p
                     font-weight: 600
+        ::-webkit-scrollbar
+            width: 4px
+            border-radius: 4px
+            margin-rigth: 25px
+        ::-webkit-scrollbar-track 
+            background: #E9ECEF
+        ::-webkit-scrollbar-thumb 
+            background: #CBCFD2
         &.radio
             margin-top: 40px
+            @media screen and (max-width: 845px)
+                margin-top: 0
             .radioHeader
                 font-weight: 400
                 font-size: 20px

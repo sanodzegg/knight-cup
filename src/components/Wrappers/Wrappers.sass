@@ -1,63 +1,96 @@
 @import '../../assets/style/variables'
 @import '../../assets/style/mixins'
 
-.landingWrapper, .personalInfoWrapper, .chessInfoWrapper, .completeWrapper
+.landingWrapper
     display: flex
     justify-content: center
     align-items: flex-start
     background-color: $landingBackground
-    .landingWrapperCol, .personalWrapperCol, .chessWrapperCol
+    .landingWrapperCol
         width: 50%
+        .landingTextWrapper
+            font-family: 'Nunito', sans-serif
+            text-transform: uppercase
+            width: 665px
+            margin-left: 85px
+            margin-top: 24.535vh
+            @media screen and (max-width: 710px)
+                margin-left: 12vw !important
+            @media screen and (max-width: 530px)
+                margin-left: 11vw !important
+            h1
+                font-weight: 800
+                font-size: 80px
+                line-height: 110px
+                color: $default
+                @media screen and (max-width: 1200px)
+                    max-width: 550px
+                @media screen and (max-width: 1175px)
+                    max-width: 400px !important
+                @media screen and (max-width: 1035px)
+                    font-size: 7.729vw
+                @media screen and (max-width: 845px)
+                    max-width: 33vw !important
+                    line-height: 13vw
+            span
+                @media screen and (max-width: 1490px)
+                    display: block
+                color: $main
+                font-size: 20px
+                line-height: 27px
+                font-weight: 700
+                display: inline-block
+                vertical-align: middle
+                margin-bottom: 15px
+            button
+                margin-top: 100px
+                @include default-btn
+                padding-right: 50px
+                background: url("@/assets/icons/btnVector.svg") no-repeat right center, $defaultBtn
+                background-position-x: 90%
+                border: 4px solid $landingBackground
+                @media screen and (max-width: 710px)
+                    width: 26vw !important
+                    background: $defaultBtn
+                    padding: 5px 0
+
+            button:hover
+                @include default-btn-hover
         &.scrollable
             height: 100vh
             overflow-y: scroll
             .landingIMGWrapper
+                @media screen and (max-width: 1575px)
+                    height: 100vh
                 display: flex
                 overflow: hidden
                 width: 100%
                 img
                     width: 105%
                     height: 105%
-                    object-fit: fill
-            .landingTextWrapper
-                font-family: 'Nunito', sans-serif
-                text-transform: uppercase
-                width: 665px
-                margin-left: 85px
-                margin-top: 265px
-                h1
-                    font-weight: 800
-                    font-size: 80px
-                    line-height: 110px
-                    color: $default
-                span
-                    color: $main
-                    font-size: 20px
-                    line-height: 27px
-                    font-weight: 700
-                    display: inline-block
-                    vertical-align: middle
-                    margin-bottom: 15px
-                button
-                    margin-top: 100px
-                    @include default-btn
-                    padding-right: 50px
-                    background: url("@/assets/icons/btnVector.svg") no-repeat right center, $defaultBtn
-                    background-position-x: 90%
-                    border: 4px solid $landingBackground
-                button:hover
-                    @include default-btn-hover
-        ::-webkit-scrollbar
-            display: none
+                    object-fit: cover
+    ::-webkit-scrollbar
+        display: none
+.personalInfoWrapper
+    background-color: $default
+    display: flex
+    justify-content: center
+    align-items: flex-start
     .personalWrapperCol
+        width: 50%
+
         .personalIMGWrapper
             display: flex
             overflow: hidden
             width: 100%
+            @media screen and (max-width: 1575px)
+                height: 100vh
             img
                 width: 105%
                 height: 105%
                 object-fit: fill
+                @media screen and (max-width: 1575px)
+                    object-fit: cover
         .pictureText
             width: 425px
             position: absolute
@@ -66,6 +99,14 @@
             font-family: 'Nunito', sans-serif
             transform: translate(-50%, -50%)
             text-transform: uppercase
+            @media screen and (max-width: 1225px)
+                left: 20.939vw
+            @media screen and (max-width: 1050px)
+                left: 25vw
+            @media screen and (max-width: 1050px)
+                left: 35vw
+            @media screen and (max-width: 1050px)
+                display: none
             .quote
                 font-weight: 800
                 font-style: italic
@@ -73,20 +114,27 @@
                 line-height: 50px
                 margin-bottom: 20px
                 color: $main
+                @media screen and (max-width: 1225px)
+                    font-size: 2.122vw
+                    max-width: 34.694vw
+                    line-height: 4.082vw
+                    margin-bottom: 1.633vw
             .author
                 font-weight: 500
                 font-style: italic
                 font-size: 24px
                 line-height: 32px
                 color: $secondary
-.personalInfoWrapper
-    background-color: $default
-
-    .personalWrapperCol
+                @media screen and (max-width: 1225px)
+                    font-size: 1.959vw
         &.form
             .personalWrapperContent
                 padding-left: 50px
                 padding-right: 175px
+                @media screen and (max-width: 1125px) 
+                    padding-right: 15.556vw        
+                @media screen and (max-width: 1125px) 
+                    padding-right: 5vw
             .personalInfoTextWrapper
                 font-weight: 600
                 margin-top: 110px
@@ -107,8 +155,12 @@
 
 .chessInfoWrapper
     background-color: $default
+    display: flex
+    justify-content: center
+    align-items: flex-start
 
     .chessWrapperCol
+        width: 50%
         &.form
             .chessWrapperContent
                 padding-left: 50px
@@ -128,42 +180,56 @@
                     color: #95939A
             .chessWrapperForm
                 margin-top: 45px
+                .navButtonWrapper
+                    @media screen and (max-width: 845px)
+                        flex-direction: column
+                        gap: 10px
+                        margin-top: 30px
         .navigationWrapper
             padding-top: 60px
         .chessIMGWrapper
             display: flex
             overflow: hidden
             width: 100%
+            @media screen and (max-width: 1575px)
+                height: 100vh
             img
                 width: 105%
                 height: 105%
                 object-fit: fill
-
-    .chessIMGWrapper
-        .pictureText
-            width: 615px
-            position: absolute
-            top: 36.5%
-            left: 22.5%
-            font-family: 'Nunito', sans-serif
-            transform: translate(-50%, -50%)
-            text-transform: uppercase
-            .quote
-                font-weight: 800
-                font-style: italic
-                font-size: 26px
-                line-height: 50px
-                margin-bottom: 20px
-                color: $main
-            .author
-                font-weight: 500
-                font-style: italic
-                font-size: 24px
-                line-height: 32px
-                color: #093F68
-                text-align: end
+                @media screen and (max-width: 1575px)
+                    object-fit: cover
+            .pictureText
+                @media screen and (max-width: 1400px)
+                    max-width: 43.929vw
+                @media screen and (max-width: 745px)
+                    display: none
+                width: 615px
+                position: absolute
+                top: 36.5%
+                left: 22.5%
+                font-family: 'Nunito', sans-serif
+                transform: translate(-50%, -50%)
+                text-transform: uppercase
+                .quote
+                    font-weight: 800
+                    font-style: italic
+                    font-size: 26px
+                    line-height: 50px
+                    margin-bottom: 20px
+                    color: $main
+                .author
+                    font-weight: 500
+                    font-style: italic
+                    font-size: 24px
+                    line-height: 32px
+                    color: #093F68
+                    text-align: end
 .completeWrapper
     background-color: $default
+    display: flex
+    justify-content: center
+    align-items: flex-start
 
     .completeWrapperCol
         width: 50%

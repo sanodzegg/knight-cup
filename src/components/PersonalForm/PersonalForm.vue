@@ -45,6 +45,7 @@
         };
     },
     methods: {
+        // styling methods
         handleBlur(e) {
             if (e.target.value.length > 0) {
                 e.target.classList.add("active");
@@ -53,6 +54,14 @@
                 e.target.classList.remove("active");
             }
         },
+        transform() {
+            const ref = this.$refs.birthInput;
+            ref.type = "date";
+
+            ref.classList.remove("valid");
+        },
+
+        // input validations
         validateName(e) {
             this.storageData.name = e.value;
             sessionStorage.setItem("KC-personalInfo", JSON.stringify(this.storageData));
@@ -108,28 +117,24 @@
             sessionStorage.setItem("KC-personalInfo", JSON.stringify(this.storageData));
 
             const year = new Date().getFullYear();
-            if (e.value) {
-                const date = e.value.split("-");
-                if (parseInt(date[0]) < year && parseInt(date[0]) > 1800) {
-                    this.errors.date_of_birth.valid = true;
-                    const parsedDate = [date[1], date[2], date[0]];
-                    this.personalData.date_of_birth = parsedDate.join("/");
 
-                    e.classList.add("valid");
-                    e.classList.remove("error");
-                }
-                else {
-                    e.classList.add("error");
-                    e.classList.remove("valid");
-                }
+            const date = e.value.split("-");
+            if (e.value !== "" && parseInt(date[0]) < year && parseInt(date[0]) > 1800) {
+
+                this.errors.date_of_birth.valid = true;
+                const parsedDate = [date[1], date[2], date[0]];
+                this.personalData.date_of_birth = parsedDate.join("/");
+
+                e.classList.add("valid");
+                e.classList.remove("error");
+            } else {
+                this.errors.date_of_birth.valid = false;
+                e.classList.add("error");
+                e.classList.remove("valid");
             }
         },
-        transform() {
-            const ref = this.$refs.birthInput;
-            ref.type = "date";
 
-            ref.classList.remove("valid");
-        },
+        // main validation methods
         validateWrapper() {
             this.validateName(this.$refs.textInput);
             this.validateMail(this.$refs.emailInput);

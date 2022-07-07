@@ -27,20 +27,72 @@
                     }
                 },
                 errData: [],
-                options: ['Beginner', 'Intermediate', 'Professional'],
+                options: {
+                    0: { value: 'beginner', option: 'Beginner' }, 
+                    1: { value: 'normal', option: 'Intermediate' }, 
+                    2: { value: 'professional', option: 'Professional' }
+                },
                 grandmastersData: [],
                 storageData: {
                     experience_level: "",
                     character_id: "",
                     already_participated: "",
-                    character_name: ""
+                    character_name: "",
+                    experience_name: ""
                 },
             };
         },
         methods: {
+            // styling methods
+            handleDropDown() {
+                this.$refs.gmWrapper.classList.remove("active");
+                this.$refs.dropDownIconGM.classList.remove("open");
+
+                this.$refs.optionsWrapper.classList.toggle("active");
+                this.$refs.dropDownIcon.classList.toggle("open");
+            },
+            handleDropDownGM() {
+                this.$refs.optionsWrapper.classList.remove("active");
+                this.$refs.dropDownIcon.classList.remove("open");
+
+                this.$refs.gmWrapper.classList.toggle("active");
+                this.$refs.dropDownIconGM.classList.toggle("open");
+            },
+
+            // selecting methods
+            handleSelect(val, name) {
+                this.storageData.experience_level = val;
+                this.storageData.experience_name = name;
+                sessionStorage.setItem("KC-chessInfo", JSON.stringify(this.storageData));
+
+                this.errors.experience_level.valid = true;
+
+                this.$refs.select.innerText = val;
+                this.$refs.optionsWrapper.classList.remove("active");
+                this.$refs.dropDownIcon.classList.remove("open");
+            },
+            handleGM(val, id) {
+                this.storageData.character_id = id;
+                this.storageData.character_name = val;
+                sessionStorage.setItem("KC-chessInfo", JSON.stringify(this.storageData));
+
+                this.errors.character_id.valid = true;
+
+                this.$refs.selectGM.innerText = val;
+                this.$refs.gmWrapper.classList.remove("active");
+                this.$refs.dropDownIconGM.classList.remove("open");
+            },
+            handleRadio(e) {
+                this.errors.already_participated.valid = true;
+                let setbool = (e.target.value === "true");
+                this.storageData.already_participated = setbool;
+                sessionStorage.setItem("KC-chessInfo", JSON.stringify(this.storageData));
+            },
+
+            // validation methods
             validateErrors() {
                 Object.entries(this.storageData).forEach(e => {
-                    if(e[0] !== "character_name") {
+                    if(e[0] !== "character_name" && e[0] !== "experience_name") {
                         if(e[1] !== "") {
                             const key = e[0];
                             this.errors[key].valid = true;
@@ -49,9 +101,9 @@
                 });
             },
             validateForms() {
-                if(JSON.parse(sessionStorage.getItem("KC-personalInfo")) === null) {
+                if (JSON.parse(sessionStorage.getItem("KC-personalInfo")) === null) {
                     return false;
-                }
+                } return true;
             },
             validate() {
                 this.validateErrors();
@@ -75,51 +127,12 @@
                         }
                     });
 
-                    if(this.errData.length === 0 || count === 4) {
+                    if(this.errData.length === 0 || count === 5) {
                         this.storageData = JSON.parse(sessionStorage.getItem("KC-chessInfo"));
                         this.$router.push("/complete");
                     }
                 }
             },
-            handleSelect(val) {
-                this.storageData.experience_level = val;
-                sessionStorage.setItem("KC-chessInfo", JSON.stringify(this.storageData));
-                this.errors.experience_level.valid = true;
-
-                this.$refs.select.innerText = val;
-
-                this.$refs.optionsWrapper.classList.remove("active");
-                this.$refs.dropDownIcon.classList.remove("open");
-            },
-            handleDropDown() {
-                this.$refs.gmWrapper.classList.remove("active");
-                this.$refs.dropDownIconGM.classList.remove("open");
-
-                this.$refs.optionsWrapper.classList.toggle("active");
-                this.$refs.dropDownIcon.classList.toggle("open");
-            },
-            handleDropDownGM() {
-                this.$refs.optionsWrapper.classList.remove("active");
-                this.$refs.dropDownIcon.classList.remove("open");
-
-                this.$refs.gmWrapper.classList.toggle("active");
-                this.$refs.dropDownIconGM.classList.toggle("open");
-            },
-            handleGM(val, id) {
-                this.storageData.character_id = id;
-                this.storageData.character_name = val;
-                sessionStorage.setItem("KC-chessInfo", JSON.stringify(this.storageData));
-                this.errors.character_id.valid = true;
-                this.$refs.selectGM.innerText = val;
-                this.$refs.gmWrapper.classList.remove("active");
-                this.$refs.dropDownIconGM.classList.remove("open");
-            },
-            handleRadio(e) {
-                this.errors.already_participated.valid = true;
-                let setbool = (e.target.value === "true");
-                this.storageData.already_participated = setbool;
-                sessionStorage.setItem("KC-chessInfo", JSON.stringify(this.storageData));
-            }
         },
         beforeMount: async function() {
             const res = await axios.get(`https://chess-tournament-api.devtest.ge/api/grandmasters`);
@@ -141,12 +154,12 @@
     <form class="chessForm">
         <div class="selectParent" id="select0">
             <div class="selectWrapper" @click="handleDropDown(), $emit('setActive', 2)">
-                <p v-if="storageData.experience_level" ref="select">{{ storageData.experience_level }}</p>
+                <p v-if="storageData.experience_name" ref="select">{{ storageData.experience_name }}</p>
                 <p v-else ref="select">level of knowledge <span>*</span></p>
                 <img ref="dropDownIcon" :src="require('@/assets/icons/selectArrow.svg')">
             </div>
             <div ref="optionsWrapper" class="optionsWrapper hidden">
-                <p @click="handleSelect(i)" v-for="i in options" :key="i">{{ i }}</p>
+                <p @click="handleSelect(i.value, i.option)" v-for="i in options" :key="i">{{ i.option }}</p>
             </div>
         </div>
         <div class="selectParent" id="select1">

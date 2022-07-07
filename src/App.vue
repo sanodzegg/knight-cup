@@ -1,21 +1,3 @@
-<script>
-  export default {
-    data() {
-        return {
-            userData: {
-                name: String,
-                email: String,
-                phone: String,
-                date_of_birth: String,
-                experience_level: String,
-                already_participated: Boolean,
-                character_id: Number
-            }
-        };
-    },
-}
-</script>
-
 <template>
   <router-view />
 </template>

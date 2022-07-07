@@ -24,11 +24,19 @@ input:hover::placeholder
     display: flex
     justify-content: space-between
 
+    @media screen and (max-width: 620px)
+        flex-direction: column
+        gap: 10px
+        margin-top: 30px
+
     .nextBtn
         @include default-btn
         padding-right: 60px
-        background: url(http://localhost:8080/img/btnVector.3a5b8adc.svg) no-repeat right center, #212529;
+        background: url(../../assets/icons/btnVector.svg) no-repeat right center, #212529
         background-position-x: 80%
+        @media screen and (max-width: 620px)
+            padding-right: 45px
+            background-position-x: 65%
     .backBtn
         @include default-mini-btn
     .backBtn:hover

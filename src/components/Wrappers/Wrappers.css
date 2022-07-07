@@ -1,56 +1,57 @@
-.landingWrapper, .personalInfoWrapper, .chessInfoWrapper, .completeWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.landingWrapper {
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: center;
+  align-items: flex-start;
   background-color: #FD5334;
 }
-
-.landingWrapper .landingWrapperCol, .landingWrapper .personalWrapperCol, .landingWrapper .chessWrapperCol, .personalInfoWrapper .landingWrapperCol, .personalInfoWrapper .personalWrapperCol, .personalInfoWrapper .chessWrapperCol, .chessInfoWrapper .landingWrapperCol, .chessInfoWrapper .personalWrapperCol, .chessInfoWrapper .chessWrapperCol, .completeWrapper .landingWrapperCol, .completeWrapper .personalWrapperCol, .completeWrapper .chessWrapperCol {
+.landingWrapper .landingWrapperCol {
   width: 50%;
 }
-
-.landingWrapper .landingWrapperCol.scrollable, .landingWrapper .personalWrapperCol.scrollable, .landingWrapper .chessWrapperCol.scrollable, .personalInfoWrapper .landingWrapperCol.scrollable, .personalInfoWrapper .personalWrapperCol.scrollable, .personalInfoWrapper .chessWrapperCol.scrollable, .chessInfoWrapper .landingWrapperCol.scrollable, .chessInfoWrapper .personalWrapperCol.scrollable, .chessInfoWrapper .chessWrapperCol.scrollable, .completeWrapper .landingWrapperCol.scrollable, .completeWrapper .personalWrapperCol.scrollable, .completeWrapper .chessWrapperCol.scrollable {
-  height: 100vh;
-  overflow-y: scroll;
-}
-
-.landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper, .landingWrapper .personalWrapperCol.scrollable .landingIMGWrapper, .landingWrapper .chessWrapperCol.scrollable .landingIMGWrapper, .personalInfoWrapper .landingWrapperCol.scrollable .landingIMGWrapper, .personalInfoWrapper .personalWrapperCol.scrollable .landingIMGWrapper, .personalInfoWrapper .chessWrapperCol.scrollable .landingIMGWrapper, .chessInfoWrapper .landingWrapperCol.scrollable .landingIMGWrapper, .chessInfoWrapper .personalWrapperCol.scrollable .landingIMGWrapper, .chessInfoWrapper .chessWrapperCol.scrollable .landingIMGWrapper, .completeWrapper .landingWrapperCol.scrollable .landingIMGWrapper, .completeWrapper .personalWrapperCol.scrollable .landingIMGWrapper, .completeWrapper .chessWrapperCol.scrollable .landingIMGWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-}
-
-.landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper img, .landingWrapper .personalWrapperCol.scrollable .landingIMGWrapper img, .landingWrapper .chessWrapperCol.scrollable .landingIMGWrapper img, .personalInfoWrapper .landingWrapperCol.scrollable .landingIMGWrapper img, .personalInfoWrapper .personalWrapperCol.scrollable .landingIMGWrapper img, .personalInfoWrapper .chessWrapperCol.scrollable .landingIMGWrapper img, .chessInfoWrapper .landingWrapperCol.scrollable .landingIMGWrapper img, .chessInfoWrapper .personalWrapperCol.scrollable .landingIMGWrapper img, .chessInfoWrapper .chessWrapperCol.scrollable .landingIMGWrapper img, .completeWrapper .landingWrapperCol.scrollable .landingIMGWrapper img, .completeWrapper .personalWrapperCol.scrollable .landingIMGWrapper img, .completeWrapper .chessWrapperCol.scrollable .landingIMGWrapper img {
-  width: 105%;
-  height: 105%;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-
-.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper, .landingWrapper .chessWrapperCol.scrollable .landingTextWrapper, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper, .personalInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper, .chessInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper, .chessInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper, .chessInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper, .completeWrapper .landingWrapperCol.scrollable .landingTextWrapper, .completeWrapper .personalWrapperCol.scrollable .landingTextWrapper, .completeWrapper .chessWrapperCol.scrollable .landingTextWrapper {
-  font-family: 'Nunito', sans-serif;
+.landingWrapper .landingWrapperCol .landingTextWrapper {
+  font-family: "Nunito", sans-serif;
   text-transform: uppercase;
   width: 665px;
   margin-left: 85px;
-  margin-top: 265px;
+  margin-top: 24.535vh;
 }
-
-.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper h1, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper h1, .landingWrapper .chessWrapperCol.scrollable .landingTextWrapper h1, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper h1, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper h1, .personalInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper h1, .chessInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper h1, .chessInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper h1, .chessInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper h1, .completeWrapper .landingWrapperCol.scrollable .landingTextWrapper h1, .completeWrapper .personalWrapperCol.scrollable .landingTextWrapper h1, .completeWrapper .chessWrapperCol.scrollable .landingTextWrapper h1 {
+@media screen and (max-width: 710px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper {
+    margin-left: 12vw !important;
+  }
+}
+@media screen and (max-width: 530px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper {
+    margin-left: 11vw !important;
+  }
+}
+.landingWrapper .landingWrapperCol .landingTextWrapper h1 {
   font-weight: 800;
   font-size: 80px;
   line-height: 110px;
   color: #FFFFFF;
 }
-
-.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper span, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper span, .landingWrapper .chessWrapperCol.scrollable .landingTextWrapper span, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper span, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper span, .personalInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper span, .chessInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper span, .chessInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper span, .chessInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper span, .completeWrapper .landingWrapperCol.scrollable .landingTextWrapper span, .completeWrapper .personalWrapperCol.scrollable .landingTextWrapper span, .completeWrapper .chessWrapperCol.scrollable .landingTextWrapper span {
+@media screen and (max-width: 1200px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper h1 {
+    max-width: 550px;
+  }
+}
+@media screen and (max-width: 1175px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper h1 {
+    max-width: 400px !important;
+  }
+}
+@media screen and (max-width: 1035px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper h1 {
+    font-size: 7.729vw;
+  }
+}
+@media screen and (max-width: 845px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper h1 {
+    max-width: 33vw !important;
+    line-height: 13vw;
+  }
+}
+.landingWrapper .landingWrapperCol .landingTextWrapper span {
   color: #212529;
   font-size: 20px;
   line-height: 27px;
@@ -59,10 +60,14 @@
   vertical-align: middle;
   margin-bottom: 15px;
 }
-
-.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper button, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper button, .landingWrapper .chessWrapperCol.scrollable .landingTextWrapper button, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper button, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper button, .personalInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper button, .chessInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper button, .chessInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper button, .chessInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper button, .completeWrapper .landingWrapperCol.scrollable .landingTextWrapper button, .completeWrapper .personalWrapperCol.scrollable .landingTextWrapper button, .completeWrapper .chessWrapperCol.scrollable .landingTextWrapper button {
+@media screen and (max-width: 1490px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper span {
+    display: block;
+  }
+}
+.landingWrapper .landingWrapperCol .landingTextWrapper button {
   margin-top: 100px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #212529;
   color: #FFFFFF;
   cursor: pointer;
@@ -78,42 +83,101 @@
   background-position-x: 90%;
   border: 4px solid #FD5334;
 }
-
-.landingWrapper .landingWrapperCol.scrollable .landingTextWrapper button:hover, .landingWrapper .personalWrapperCol.scrollable .landingTextWrapper button:hover, .landingWrapper .chessWrapperCol.scrollable .landingTextWrapper button:hover, .personalInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper button:hover, .personalInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper button:hover, .personalInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper button:hover, .chessInfoWrapper .landingWrapperCol.scrollable .landingTextWrapper button:hover, .chessInfoWrapper .personalWrapperCol.scrollable .landingTextWrapper button:hover, .chessInfoWrapper .chessWrapperCol.scrollable .landingTextWrapper button:hover, .completeWrapper .landingWrapperCol.scrollable .landingTextWrapper button:hover, .completeWrapper .personalWrapperCol.scrollable .landingTextWrapper button:hover, .completeWrapper .chessWrapperCol.scrollable .landingTextWrapper button:hover {
-  border: 4px solid #C2A5F9CC;
+@media screen and (max-width: 710px) {
+  .landingWrapper .landingWrapperCol .landingTextWrapper button {
+    width: 26vw !important;
+    background: #212529;
+    padding: 5px 0;
+  }
 }
-
-.landingWrapper .landingWrapperCol ::-webkit-scrollbar, .landingWrapper .personalWrapperCol ::-webkit-scrollbar, .landingWrapper .chessWrapperCol ::-webkit-scrollbar, .personalInfoWrapper .landingWrapperCol ::-webkit-scrollbar, .personalInfoWrapper .personalWrapperCol ::-webkit-scrollbar, .personalInfoWrapper .chessWrapperCol ::-webkit-scrollbar, .chessInfoWrapper .landingWrapperCol ::-webkit-scrollbar, .chessInfoWrapper .personalWrapperCol ::-webkit-scrollbar, .chessInfoWrapper .chessWrapperCol ::-webkit-scrollbar, .completeWrapper .landingWrapperCol ::-webkit-scrollbar, .completeWrapper .personalWrapperCol ::-webkit-scrollbar, .completeWrapper .chessWrapperCol ::-webkit-scrollbar {
-  display: none;
+.landingWrapper .landingWrapperCol .landingTextWrapper button:hover {
+  border: 4px solid rgba(194, 165, 249, 0.8);
 }
-
-.landingWrapper .personalWrapperCol .personalIMGWrapper, .personalInfoWrapper .personalWrapperCol .personalIMGWrapper, .chessInfoWrapper .personalWrapperCol .personalIMGWrapper, .completeWrapper .personalWrapperCol .personalIMGWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.landingWrapper .landingWrapperCol.scrollable {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper {
   display: flex;
   overflow: hidden;
   width: 100%;
 }
+@media screen and (max-width: 1575px) {
+  .landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper {
+    height: 100vh;
+  }
+}
+.landingWrapper .landingWrapperCol.scrollable .landingIMGWrapper img {
+  width: 105%;
+  height: 105%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.landingWrapper ::-webkit-scrollbar {
+  display: none;
+}
 
-.landingWrapper .personalWrapperCol .personalIMGWrapper img, .personalInfoWrapper .personalWrapperCol .personalIMGWrapper img, .chessInfoWrapper .personalWrapperCol .personalIMGWrapper img, .completeWrapper .personalWrapperCol .personalIMGWrapper img {
+.personalInfoWrapper {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.personalInfoWrapper .personalWrapperCol {
+  width: 50%;
+}
+.personalInfoWrapper .personalWrapperCol .personalIMGWrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+@media screen and (max-width: 1575px) {
+  .personalInfoWrapper .personalWrapperCol .personalIMGWrapper {
+    height: 100vh;
+  }
+}
+.personalInfoWrapper .personalWrapperCol .personalIMGWrapper img {
   width: 105%;
   height: 105%;
   -o-object-fit: fill;
      object-fit: fill;
 }
-
-.landingWrapper .personalWrapperCol .pictureText, .personalInfoWrapper .personalWrapperCol .pictureText, .chessInfoWrapper .personalWrapperCol .pictureText, .completeWrapper .personalWrapperCol .pictureText {
+@media screen and (max-width: 1575px) {
+  .personalInfoWrapper .personalWrapperCol .personalIMGWrapper img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.personalInfoWrapper .personalWrapperCol .pictureText {
   width: 425px;
   position: absolute;
   top: 43%;
   left: 18.5%;
-  font-family: 'Nunito', sans-serif;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  font-family: "Nunito", sans-serif;
+  transform: translate(-50%, -50%);
   text-transform: uppercase;
 }
-
-.landingWrapper .personalWrapperCol .pictureText .quote, .personalInfoWrapper .personalWrapperCol .pictureText .quote, .chessInfoWrapper .personalWrapperCol .pictureText .quote, .completeWrapper .personalWrapperCol .pictureText .quote {
+@media screen and (max-width: 1225px) {
+  .personalInfoWrapper .personalWrapperCol .pictureText {
+    left: 20.939vw;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .personalInfoWrapper .personalWrapperCol .pictureText {
+    left: 25vw;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .personalInfoWrapper .personalWrapperCol .pictureText {
+    left: 35vw;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .personalInfoWrapper .personalWrapperCol .pictureText {
+    display: none;
+  }
+}
+.personalInfoWrapper .personalWrapperCol .pictureText .quote {
   font-weight: 800;
   font-style: italic;
   font-size: 26px;
@@ -121,118 +185,149 @@
   margin-bottom: 20px;
   color: #212529;
 }
-
-.landingWrapper .personalWrapperCol .pictureText .author, .personalInfoWrapper .personalWrapperCol .pictureText .author, .chessInfoWrapper .personalWrapperCol .pictureText .author, .completeWrapper .personalWrapperCol .pictureText .author {
+@media screen and (max-width: 1225px) {
+  .personalInfoWrapper .personalWrapperCol .pictureText .quote {
+    font-size: 2.122vw;
+    max-width: 34.694vw;
+    line-height: 4.082vw;
+    margin-bottom: 1.633vw;
+  }
+}
+.personalInfoWrapper .personalWrapperCol .pictureText .author {
   font-weight: 500;
   font-style: italic;
   font-size: 24px;
   line-height: 32px;
   color: #E5E6E8;
 }
-
-.personalInfoWrapper {
-  background-color: #FFFFFF;
+@media screen and (max-width: 1225px) {
+  .personalInfoWrapper .personalWrapperCol .pictureText .author {
+    font-size: 1.959vw;
+  }
 }
-
 .personalInfoWrapper .personalWrapperCol.form .personalWrapperContent {
   padding-left: 50px;
   padding-right: 175px;
 }
-
+@media screen and (max-width: 1125px) {
+  .personalInfoWrapper .personalWrapperCol.form .personalWrapperContent {
+    padding-right: 15.556vw;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .personalInfoWrapper .personalWrapperCol.form .personalWrapperContent {
+    padding-right: 5vw;
+  }
+}
 .personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper {
   font-weight: 600;
   margin-top: 110px;
 }
-
 .personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-
 .personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper h2 {
   font-size: 32px;
   line-height: 48px;
   color: #000;
 }
-
 .personalInfoWrapper .personalWrapperCol.form .personalInfoTextWrapper p {
   font-size: 14px;
   line-height: 21px;
   color: #95939A;
 }
-
 .personalInfoWrapper .personalWrapperCol.form .personalWrapperForm {
   margin-top: 45px;
 }
-
 .personalInfoWrapper .personalWrapperCol .navigationWrapper {
   padding-top: 60px;
 }
 
 .chessInfoWrapper {
   background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-
+.chessInfoWrapper .chessWrapperCol {
+  width: 50%;
+}
 .chessInfoWrapper .chessWrapperCol.form .chessWrapperContent {
   padding-left: 50px;
   padding-right: 110px;
 }
-
 .chessInfoWrapper .chessWrapperCol.form .chessInfoTextWrapper {
   font-weight: 600;
   margin-top: 110px;
 }
-
 .chessInfoWrapper .chessWrapperCol.form .chessInfoTextWrapper * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-
 .chessInfoWrapper .chessWrapperCol.form .chessInfoTextWrapper h2 {
   font-size: 32px;
   line-height: 48px;
   color: #000;
 }
-
 .chessInfoWrapper .chessWrapperCol.form .chessInfoTextWrapper p {
   font-size: 14px;
   line-height: 21px;
   color: #95939A;
 }
-
 .chessInfoWrapper .chessWrapperCol.form .chessWrapperForm {
   margin-top: 45px;
 }
-
+@media screen and (max-width: 845px) {
+  .chessInfoWrapper .chessWrapperCol.form .chessWrapperForm .navButtonWrapper {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
+}
 .chessInfoWrapper .chessWrapperCol .navigationWrapper {
   padding-top: 60px;
 }
-
 .chessInfoWrapper .chessWrapperCol .chessIMGWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   width: 100%;
 }
-
+@media screen and (max-width: 1575px) {
+  .chessInfoWrapper .chessWrapperCol .chessIMGWrapper {
+    height: 100vh;
+  }
+}
 .chessInfoWrapper .chessWrapperCol .chessIMGWrapper img {
   width: 105%;
   height: 105%;
   -o-object-fit: fill;
      object-fit: fill;
 }
-
-.chessInfoWrapper .chessIMGWrapper .pictureText {
+@media screen and (max-width: 1575px) {
+  .chessInfoWrapper .chessWrapperCol .chessIMGWrapper img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.chessInfoWrapper .chessWrapperCol .chessIMGWrapper .pictureText {
   width: 615px;
   position: absolute;
   top: 36.5%;
   left: 22.5%;
-  font-family: 'Nunito', sans-serif;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  font-family: "Nunito", sans-serif;
+  transform: translate(-50%, -50%);
   text-transform: uppercase;
 }
-
-.chessInfoWrapper .chessIMGWrapper .pictureText .quote {
+@media screen and (max-width: 1400px) {
+  .chessInfoWrapper .chessWrapperCol .chessIMGWrapper .pictureText {
+    max-width: 43.929vw;
+  }
+}
+@media screen and (max-width: 745px) {
+  .chessInfoWrapper .chessWrapperCol .chessIMGWrapper .pictureText {
+    display: none;
+  }
+}
+.chessInfoWrapper .chessWrapperCol .chessIMGWrapper .pictureText .quote {
   font-weight: 800;
   font-style: italic;
   font-size: 26px;
@@ -240,8 +335,7 @@
   margin-bottom: 20px;
   color: #212529;
 }
-
-.chessInfoWrapper .chessIMGWrapper .pictureText .author {
+.chessInfoWrapper .chessWrapperCol .chessIMGWrapper .pictureText .author {
   font-weight: 500;
   font-style: italic;
   font-size: 24px;
@@ -252,45 +346,35 @@
 
 .completeWrapper {
   background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-
 .completeWrapper .completeWrapperCol {
   width: 50%;
   height: 100vh;
 }
-
 .completeWrapper .completeWrapperCol.done {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 .completeWrapper .completeWrapperCol.done .completeDoneWrapper {
   text-align: center;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
-
 .completeWrapper .completeWrapperCol.done .completeDoneWrapper h3 {
   font-weight: 800;
   font-size: 36px;
   line-height: 54px;
   margin-top: 20px;
 }
-
 .completeWrapper .completeIMGWrapper {
   height: 100%;
 }
-
 .completeWrapper .completeIMGWrapper img {
   width: 105%;
   height: 105%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-/*# sourceMappingURL=Wrappers.css.map */
+}/*# sourceMappingURL=Wrappers.css.map */

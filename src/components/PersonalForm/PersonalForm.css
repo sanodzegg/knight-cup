@@ -3,82 +3,71 @@ input {
   margin-top: 40px;
   border: unset;
   outline: unset;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   width: 100%;
   padding: 8px 16px;
-  border-bottom: 1px solid #21252932;
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1960784314);
 }
-
 input.active {
   border: unset;
   outline: unset;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   width: 100%;
   padding: 8px 16px;
-  border-bottom: 1px solid #21252932;
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1960784314);
   background-color: #E9ECEF;
 }
-
 input.error {
   border: unset;
   outline: unset;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   width: 100%;
   padding: 8px 16px;
-  border-bottom: 1px solid #21252932;
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1960784314);
   color: #DC3545;
   background-color: #FFEFEF;
 }
-
 input.valid {
   border: unset;
   outline: unset;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   width: 100%;
   padding: 8px 16px;
-  border-bottom: 1px solid #21252932;
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1960784314);
   background-color: transparent;
   background: url(@/assets/icons/validVector.svg) no-repeat right center;
   background-position-x: 98.5%;
 }
 
-input:hover::-webkit-input-placeholder {
-  color: #21252980;
+input:hover::-moz-placeholder {
+  color: rgba(33, 37, 41, 0.5019607843);
 }
 
 input:hover:-ms-input-placeholder {
-  color: #21252980;
-}
-
-input:hover::-ms-input-placeholder {
-  color: #21252980;
+  color: rgba(33, 37, 41, 0.5019607843);
 }
 
 input:hover::placeholder {
-  color: #21252980;
+  color: rgba(33, 37, 41, 0.5019607843);
 }
 
-::-webkit-input-placeholder {
+::-moz-placeholder {
   color: #212529;
 }
 
 :-ms-input-placeholder {
-  color: #212529;
-}
-
-::-ms-input-placeholder {
   color: #212529;
 }
 
@@ -89,16 +78,18 @@ input:hover::placeholder {
 .navButtonWrapper {
   width: 100%;
   margin-top: 85px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
+@media screen and (max-width: 620px) {
+  .navButtonWrapper {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
+}
 .navButtonWrapper .nextBtn {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #212529;
   color: #FFFFFF;
   cursor: pointer;
@@ -110,12 +101,17 @@ input:hover::placeholder {
   border: unset;
   border-radius: 8px;
   padding-right: 60px;
-  background: url(http://localhost:8080/img/btnVector.3a5b8adc.svg) no-repeat right center, #212529;
+  background: url(../../assets/icons/btnVector.svg) no-repeat right center, #212529;
   background-position-x: 80%;
 }
-
+@media screen and (max-width: 620px) {
+  .navButtonWrapper .nextBtn {
+    padding-right: 45px;
+    background-position-x: 65%;
+  }
+}
 .navButtonWrapper .backBtn {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #212529;
   color: #FFFFFF;
   cursor: pointer;
@@ -130,10 +126,9 @@ input:hover::placeholder {
   background-color: transparent;
   border: 1px solid #212529;
 }
-
 .navButtonWrapper .backBtn:hover {
-  background-color: #B9B4C34D;
-  border: 1px solid #C2A5F9CC;
+  background-color: rgba(185, 180, 195, 0.3019607843);
+  border: 1px solid rgba(194, 165, 249, 0.8);
 }
 
 input::-webkit-outer-spin-button,
@@ -157,5 +152,4 @@ input[type=number] {
 .valid::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
-}
-/*# sourceMappingURL=PersonalForm.css.map */
+}/*# sourceMappingURL=PersonalForm.css.map */

@@ -2,27 +2,19 @@
   background-color: #FFFFFF;
   width: 350px;
   padding: 10px 12px;
-  border: 1px #0000001A solid;
+  border: 1px rgba(0, 0, 0, 0.1019607843) solid;
   border-radius: 4px;
-  -webkit-box-shadow: 0 8px 16px #00000026;
-          box-shadow: 0 8px 16px #00000026;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1490196078);
   margin-top: 10px;
   position: relative;
 }
-
 .errorParent * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-
 .errorParent .errorHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
-
 .errorParent .errorHeader .errTitle {
   color: #DC3545;
   font-weight: 600;
@@ -30,14 +22,12 @@
   line-height: 21px;
   margin-left: 8px;
 }
-
 .errorParent .closeIcon {
   position: absolute;
   right: 13.5px;
   top: 14.5px;
   cursor: pointer;
 }
-
 .errorParent .errDesc {
   margin-top: 20px;
   font-weight: 400;
@@ -67,5 +57,4 @@
   100% {
     opacity: 0;
   }
-}
-/*# sourceMappingURL=ErrorSnack.css.map */
+}/*# sourceMappingURL=ErrorSnack.css.map */

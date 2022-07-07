@@ -9,18 +9,6 @@
 
 <template>
     <div class="navigationWrapper">
-        <!-- <div class="wizardWrapper">
-            <div v-if="current === 1 && active === 0" class="pageWrapper current">
-                <span>1</span>
-            </div>
-            <div v-else-if="current === 1 && active === 1" class="pageWrapper current active">
-                <span>1</span>
-            </div>
-            <div v-else class="pageWrapper">
-                <span>1</span>
-            </div>
-            <p>Personal Information</p>
-        </div> -->
         <div class="wizardWrapper">
             <div :class="current === 1 && active === 0 ? 'pageWrapper current' 
             : current === 1 && active === 1 ? 'pageWrapper current active' : current === 2 ? 'pageWrapper current active done'

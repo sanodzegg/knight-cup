@@ -8,20 +8,31 @@
                 finalData: Object,
             };
         },
-        mounted: function () {
-            this.personalData = JSON.parse(sessionStorage.getItem("KC-personalInfo"));
-            this.chessData = JSON.parse(sessionStorage.getItem("KC-chessInfo"));
+        methods: {
+            parseChess() {
+                delete this.chessData.character_name;
+                delete this.chessData.experience_name;
+            }
+        },
+        beforeMount: function () {
+            try {
+                this.personalData = JSON.parse(sessionStorage.getItem("KC-personalInfo"));
+                this.chessData = JSON.parse(sessionStorage.getItem("KC-chessInfo"));
 
-            sessionStorage.clear();
-            this.finalData = {
-                ...this.personalData,
-                ...this.chessData
-            };
-            console.log(this.finalData);
+                this.parseChess();
+
+                sessionStorage.clear();
+                this.finalData = {
+                    ...this.personalData,
+                    ...this.chessData
+                };
+            } catch(err) {
+                if(err) this.$router.go(-3);
+            }
         },
         components: { CompleteWrapper }
     }
 </script>
 <template>
-    <CompleteWrapper />
+    <CompleteWrapper :finalData="finalData" />
 </template>
