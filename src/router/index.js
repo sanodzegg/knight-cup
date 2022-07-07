@@ -3,6 +3,7 @@ import LandingView from '@/views/LandingView';
 import PersonalInfoView from '@/views/PersonalInfoView';
 import ChessInfoView from '@/views/ChessInfoView';
 import CompleteView from '@/views/CompleteView';
+import PageNotFound from '@/views/PageNotFound';
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     name: 'CompleteTab',
     component: CompleteView
   },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: PageNotFound,
+  }
 ]
 
 const router = createRouter({

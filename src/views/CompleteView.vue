@@ -27,7 +27,7 @@
                     ...this.chessData
                 };
             } catch(err) {
-                if(err) this.$router.go(-3);
+                if(err) this.$router.push('notFound');
             }
         },
         components: { CompleteWrapper }
