@@ -67,7 +67,7 @@
 
                 this.errors.experience_level.valid = true;
 
-                this.$refs.select.innerText = val;
+                this.$refs.select.innerText = name;
                 this.$refs.optionsWrapper.classList.remove("active");
                 this.$refs.dropDownIcon.classList.remove("open");
             },
