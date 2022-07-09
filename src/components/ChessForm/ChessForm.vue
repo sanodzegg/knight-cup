@@ -101,16 +101,27 @@
                 });
             },
             validateForms() {
-                if (JSON.parse(sessionStorage.getItem("KC-personalInfo")) === null) {
-                    return false;
-                } return true;
+                let formDone;
+                if (JSON.parse(sessionStorage.getItem("KC-personalInfo")) !== null) {
+                    const personalFormObject = JSON.parse(sessionStorage.getItem("KC-personalInfo"));
+                    Object.values(personalFormObject).forEach(e => {
+                        if(e !== "") {
+                            formDone = true;
+                        } else {
+                            formDone = false;
+                        }
+                    }); 
+                } else {
+                    formDone = false;
+                }
+                return formDone;
             },
             validate() {
                 this.validateErrors();
                 const formDone = this.validateForms();
                 
                 if (!formDone) {
-                    this.$router.go(-1);
+                    this.$router.push("/personalForm");
                 } else {
                     let count = 0;
                     Object.values(this.storageData).forEach(e => {
